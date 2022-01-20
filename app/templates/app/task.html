@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TuDos</title>
+    </head>
+    <body>
+        <form method="post" action="{% url 'task' %}">
+            {% csrf_token %}
+            {{form.title}}
+            <input type="submit" value="Add">
+        </form>
+
+        {% for task in tasks %}
+            <div>
+                <p>{{task}}</p>
+            </div>
+        {% endfor %}
+    </body>
+
+</html>
